@@ -15,6 +15,12 @@ To get started with the Liftoff Track Generator, follow these steps:
 2. **Prepare Your STL File:** Design your track in your preferred 3D modeling software and export it as an STL file.
 3. **Convert Your STL File:** Use the Liftoff Track Generator to convert your STL file into a Liftoff-compatible track format.
 4. **Import the Track into Liftoff:** Follow the instructions provided by the tool to import your new track into the game.
+
+## TODOs
+ - Add more liftoff objects and make the code able to use them in order to reduce the load
+ - Fix the code to import models on actual sizes
+ - Make the code able to add the model on an already made track
+ - Make it more user friendly
 ## Contributing
 Contributions to the Liftoff Track Generator are welcome! Whether it's reporting bugs, suggesting new features, or improving the documentation, your help is appreciated. Please refer to the CONTRIBUTING.md file for more details on how to contribute.
 
