@@ -7,38 +7,7 @@ class Object:
         self.instanceID = instanceID
         self.position = position
         self.rotation = rotation
-
-class SpawnPoint(Object):
-    def __init__(self, instanceID, position, rotation):
-        super().__init__("SpawnPointSingle02", instanceID, position, rotation)
-
-    def export(self):
-        track = ET.Element("TrackBlueprint")
-        track.set("xsi:type", "TrackBlueprintSpawnpoint")
-        itemID = ET.SubElement(track, "itemID")
-        itemID.text = str(self.itemID)
-        instanceID = ET.SubElement(track, "instanceID")
-        instanceID.text = str(self.instanceID)
-        position = ET.SubElement(track, "position")
-        x = ET.SubElement(position, "x")
-        x.text = str(self.position[0])
-        y = ET.SubElement(position, "y")
-        y.text = str(self.position[1])
-        z = ET.SubElement(position, "z")
-        z.text = str(self.position[2])
-        rotation = ET.SubElement(track, "rotation")
-        x = ET.SubElement(rotation, "x")
-        x.text = str(self.rotation[0])
-        y = ET.SubElement(rotation, "y")
-        y.text = str(self.rotation[1])
-        z = ET.SubElement(rotation, "z")
-        z.text = str(self.rotation[2])
-        return track
     
-class Cube05x05(Object):
-    def __init__(self, instanceID, position, rotation):
-        super().__init__("DrawingBoardCube0.5mx0.5m01", instanceID, position, rotation)
-
     def export(self):
         track = ET.Element("TrackBlueprint")
         track.set("xsi:type", "TrackBlueprintFlag")
@@ -61,7 +30,23 @@ class Cube05x05(Object):
         z = ET.SubElement(rotation, "z")
         z.text = str(self.rotation[2])
         return track
-    
+
+class SpawnPoint(Object):
+    def __init__(self, instanceID, position, rotation):
+        super().__init__("SpawnPointSingle02", instanceID, position, rotation)
+
+class Cube05x05(Object):
+    def __init__(self, instanceID, position, rotation):
+        super().__init__("DrawingBoardCube0.5mx0.5m01", instanceID, position, rotation)
+
+class DrawingBoardWall5mx5m(Object):
+    def __init__(self, instanceID, position, rotation):
+        super().__init__("DrawingBoardWall5mx5m01", instanceID, position, rotation)
+
+class DrawingBoardWall5mx5m(Object):
+    def __init__(self, instanceID, position, rotation):
+        super().__init__("DrawingBoardCube1mx1m01", instanceID, position, rotation)
+
 class Track:
     def __init__(self, track_name, game_version, localID):
         self.track_name = track_name
